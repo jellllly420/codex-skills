@@ -1,0 +1,4 @@
+interface:
+  display_name: "Devcontainer Exec"
+  short_description: "Run toolchain commands inside Dev Containers"
+  default_prompt: "Use $devcontainer-exec to run build, test, and toolchain commands inside this repository's Dev Container when available."
