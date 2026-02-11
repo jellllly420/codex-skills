@@ -1,0 +1,4 @@
+interface:
+  display_name: "Devcontainer Create"
+  short_description: "Create reliable devcontainer.json configs"
+  default_prompt: "Use $devcontainer-create to generate a reliable .devcontainer/devcontainer.json for this repository."

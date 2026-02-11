@@ -1,0 +1,26 @@
+{
+    "name": "linux-dev",
+    "image": "mcr.microsoft.com/devcontainers/base:trixie",
+    "remoteUser": "vscode",
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+    "runArgs": [
+        "--network=host"
+    ],
+    "mounts": [
+        "source=kernel-ccache,target=/ccache,type=volume"
+    ],
+    "containerEnv": {
+        "SHELL": "/bin/zsh",
+        "CCACHE_DIR": "/ccache",
+        "CC": "ccache clang",
+        "HOSTCC": "ccache clang",
+        "LLVM": "1"
+    },
+    "postCreateCommand": "sudo apt-get update \
+    && sudo apt-get install -y --no-install-recommends \
+    libncurses-dev flex bison ccache clang lld bc python3 \
+    llvm rustc rust-src bindgen rustfmt rust-clippy gdb \
+    clangd clang-format qemu-system-x86 qemu-system-aarch64 \
+    && sudo apt-get clean \
+    && sudo rm -rf /var/lib/apt/lists/*"
+}
